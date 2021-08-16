@@ -7,7 +7,7 @@ export const SearchBox = ({ text, handleChange }) => {
     <div className="search-box">
       <input
         class="search-box"
-        type="text"
+        type="search"
         value={text}
         onChange={handleChange}
         placeholder="search monsters"
