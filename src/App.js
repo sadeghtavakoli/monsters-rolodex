@@ -24,19 +24,33 @@ class App extends Component {
 
     loadMonsters();
   }
-  handleSearch = (e) => {
-    const searchText = e.target.value;
-    this.setState({ searchText });
+
+  handleSearch = (e) => this.setState({ searchText: e.target.value });
+
+  searchMonsters = () => {
+    const { monsters, searchText } = this.state;
+
+    const searchedMonsters = !monsters[1]
+      ? monsters
+      : monsters.filter((monster) =>
+          monster.name.toLowerCase().includes(searchText.toLowerCase())
+        );
+
+    return searchedMonsters;
   };
+
   render() {
+    const searchedMonsters = this.searchMonsters();
+
     return (
       <div className="App">
         <h1 className="app-header">Monsters Rolodex</h1>
         <SearchBox
           text={this.state.searchText}
           handleChange={this.handleSearch}
+          placeholder="search monsters"
         />
-        <CardList monsters={this.state.monsters}></CardList>
+        <CardList monsters={searchedMonsters}></CardList>
       </div>
     );
   }
