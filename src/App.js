@@ -24,11 +24,18 @@ class App extends Component {
 
     loadMonsters();
   }
+  handleSearch = (e) => {
+    const searchText = e.target.value;
+    this.setState({ searchText });
+  };
   render() {
     return (
       <div className="App">
         <h1 className="app-header">Monsters Rolodex</h1>
-        <SearchBox text={this.state.searchText} />
+        <SearchBox
+          text={this.state.searchText}
+          handleChange={this.handleSearch}
+        />
         <CardList monsters={this.state.monsters}></CardList>
       </div>
     );

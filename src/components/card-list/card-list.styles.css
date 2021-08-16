@@ -2,6 +2,17 @@
   width: 85vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 20px;
+}
+
+@media screen and (min-width: 720px) {
+  .card-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1110px) {
+  .card-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

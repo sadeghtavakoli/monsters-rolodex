@@ -8,9 +8,9 @@
   border: 1px solid grey;
   min-height: 30rem;
   cursor: pointer;
-  transition: transform 0.25s ease-out;
+  transition: all 0.25s ease-out;
 }
-.card:hover {
+.card-container:hover {
   transform: scale(1.05);
 }
 .card-img {

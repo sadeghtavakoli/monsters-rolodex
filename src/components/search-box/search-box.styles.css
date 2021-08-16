@@ -1,0 +1,7 @@
+.search-box {
+  margin: 1rem auto;
+  display: block;
+  outline: 0;
+  padding: 1rem 0.5rem;
+  font-size: medium;
+}
